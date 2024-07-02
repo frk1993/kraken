@@ -277,3 +277,6 @@ class CargoManifest:
         path = path or self._path
         with path.open("wb") as fp:
             tomli_w.dump(self.to_json(), fp)
+
+    def get_from_raw_data(self, name: str) -> Any:
+            return self._data[name]
